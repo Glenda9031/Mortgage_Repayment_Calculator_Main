@@ -9,44 +9,82 @@
   <title>Frontend Mentor | Mortgage repayment calculator</title>
 </head>
 <body>
+  <main>
+    <section>
+      <div class="container">
+        <div class="details-container">
+          <div class="header-container">
+            <h1>Mortgage Calculator</h1>
+            <button class="clear-button">Clear All</button>
+          </div>
+          <form action="">
+            <div class="amount">
+              <label for="mortgage-amount-input">Mortgage Amount</label>
+              <input type="number" id="mortgage-amount-input" name="mortgage-amount-input" />
+              <div class="pound-symbol symbol-background">&pound;</div>
+              <p class="error-msg"></p>
+            </div>
 
-  Mortgage Calculator
-  Clear All
+            <div class="term-interest-container">
+              <div class="term-cont">
+                <label for="Mortgage-term">Mortgage Term</label>
+                <input type="number" id="mortgage-term-input" name="mortgage-term-input" />
+                <div class="year-symbol symbol-background">year</div>
+                <p class="error-msg"></p>
+              </div>
 
-  Mortgage Amount
+              <div class="interest-container">
+                <label for="Mortgage-term">Interest Rate</label>
+                <input type="number" id="interest-rate-input" name="interest-rate" />
+                <div class="percent-symbol symbol-background">%</div>
+                <p class="error-msg"></p>
+              </div>
+            </div>
 
-  Mortgage Term
+            <div class="type-container">
+              <label for="Mortgage-term">Mortgage Type</label>
+              <label for="repayment-option" class="option repayment-label">Mortgage Type
+                <input type="radio" id="repayment-option" name="Mortgagetype" value="repayment" />
+                Repayment
+              </label>
+              <label for="interest-only-option" class="option interestonly-label">
+                <input type="radio" id="interest-only-option" name="Mortgagetype" value="interest-only" />
+                Interest Only
+              </label>
+              <p class="error-msg"></p>
+            </div>
+            <button class="calculate-button">
+              <img src="./assets/images/icon-calculator.svg" alt="calculator icon" />
+              <span>Calculate Repayments</span>
+            </button>
+          </form>
+        </div>
 
-  Interest Rate
+        <div class="results-container">
+          <div class="results-header">
+            <img src="./assets/images/illustration-empty.svg" alt="empty illustration" />
+            <h2>Results shown here</h2>
+            <p class="desc">Complete the form and click “calculate repayments” to see what 
+              your monthly repayments would be.</p>
+          </div>
 
-  Mortgage Type
-  Repayment
-  Interest Only
+          <div class="results-detail">
+            <h2>Your results</h2>
+            <p>Your results are shown below based on the information you provided. 
+              To adjust the results, edit the form and click “calculate repayments” again.</p>
 
-  Calculate Repayments
-
-  <!-- Empty results start -->
-
-  Results shown here
-
-  Complete the form and click “calculate repayments” to see what 
-  your monthly repayments would be.
-
-  <!-- Empty results end -->
-
-  <!-- Completed results start -->
-
-  Your results
-
-  Your results are shown below based on the information you provided. 
-  To adjust the results, edit the form and click “calculate repayments” again.
-
-  Your monthly repayments
-
-  Total you'll repay over the term
-
-  <!-- Completed results end -->
-  
+              <div class="results-summary">
+                <p class="monthly-repayment-label">Your monthly repayments</p>
+                <h3 class="monthly-repayment-label-amount"></h3>
+                <hr />
+                <p class="total-repayment-label">Total you'll repay over the term</p>
+                <h3 class="monthly-repayment-label-amount"></h3>
+              </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
   <script src="script.js"></script>
 </body>
 </html>
