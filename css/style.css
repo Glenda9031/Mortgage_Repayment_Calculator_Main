@@ -56,6 +56,154 @@ h1 {
     color: var(--Slate900);
 }
 
+.clear-button {
+  text-decorationn: underline;
+  font-size: 0.95em;
+  color: var(--Slate700);
+  letter-spacing: .0625rem;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+
+.amount {
+  display: flex;
+  flex-direction: column;
+  gap: .625rem;
+  position: relative;
+}
+
+.amount > label,
+.term-container > label,
+.interest-container > label,
+.type-container > label {
+  color: var(--Slate700);
+  font-size: 0.95em;
+  font-weight: 500;
+}
+
+#mortgage-amount-input,
+#mortgage-term-input,
+#interest-rate-input {
+  width: 100%;
+  height: 2.8125rem;
+  border-radius: .3125rem;
+  border: .0625rem solid var(--Slate700);
+  padding: .625rem .625rem .625rem 3.4375rem;
+  font-weight: 700;
+  font-sizeL 1em;
+  cursor: pointer;
+}
+
+#mortgage-amount-input:hover,
+#mortgage-term-input:hover,
+#interest-rate-input:hover {
+  border-color: var(--Lime);
+}
+
+.symbol-background {
+  background-color: var(--Slate100);
+  position: absolute;
+  height: 2.6875rem;
+  top: 1.875rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color: var(--Slate700);
+}
+
+.pound-symbol {
+  width: 2.5rem;
+  border-radius: .3125rem 0 0 .3125rem;
+  left: .25rem;
+}
+
+.year-symbol {
+  right: .0625rem;
+  width: 4.6875rem;
+  border-radius: 0 .3125rem .3125rem 0;
+}
+
+.percent-symbol {
+  right: .0625rem;
+  width: 2.5rem;
+  border-radius: 0 .3125rem .3125rem 0;
+}
+
+.term-interest-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5625rem;
+  margin-top: 2.2rem;
+}
+
+.term-container,
+.interest-container {
+  display: flex;
+  flex-direction: column;
+  gap: .625rem;
+  position: relative;
+}
+
+#mortgage-term-input,
+#interest-rate-input {
+  padding: .9375rem;
+}
+
+
+#mortgage-amount-input:hover + .symbol-background,
+#mortgage-term-input:hover + .symbol-background,
+#interest-rate-input:hover + .symbol-background {
+  background-color: var(--Lime);
+}
+
+#mortgage-amount-input:focus-visible + .symbol-background,
+#mortgage-term-input:focus-visible + .symbol-background,
+#interest-rate-input:focus-visible + .symbol-background {
+  background-color: var(--Lime);
+}
+
+#mortgage-amount-input:focus-visible,
+#mortgage-term-input:focus-visible,
+#interest-rate-input:focus-visible {
+  background-color: var(--Lime);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.type-container {
+  margin-top: 2.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: .9375rem;
+}
+
+.option {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: .9375rem;
+  padding: .75rem;
+  border: .0625rem solid var(--Slate700);
+  cursor: pointer;
+  border-radius: .3125rem;
+  font-weight: 700;
+  color: var(--Slate900);
+}
+
+.option:hover {
+  background-color: hsla(61%, 70%, 52%, 0.213);
+  border-color: var(--Lime);
+}
+
+
+
+
 
 
 
