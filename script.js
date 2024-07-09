@@ -66,6 +66,39 @@ function calculateRepayment() {
     const interestRate = validInput(interestRateInput.value, 2);
     const isRadioButtonChecked = checkRadioButton();
 
-    
+    if (mortgageAmount && mortgageTerm && mortgageInterest) {
+        if (isRadioButtonChecked === "repayment") {
+            // Convert annual interest Rate to monthly interest
+            const monthlyInterest = monthlyInterest / 100 / 12;
+            // Calculate number of payments
+            const numberOfPayment = mortgageTerm * 12;
+            // Calculate (1+r)n
+            const onePlusPowerN = Math.pow(1 + monthlyInterest, numberOfPayment);
+            // Calculate Monthly Mortgage payment
+            const monthly = 
+                (mortgageAmount * (monthlyInterest * onePlusPowerN)) /
+                (onePlusPowerN - 1);
+            // Calculate total repayment
+            const totalRepayment = monthly * numberOfPayment; 
+            // Round it to two decimal and format into Currency
+            const monthlyRepayment = formatNumber(monthly);
+            const totalRepaymentRounded = formatNumber(totalRepayment);
+            
+            resultHeader.classList.add("hide");
+            resultDetails.classList.add("show");
+            labelAmount[0].textContent = monthlyRepayment;
+            labelAmount[1].textContent = totalRepaymentRounded;
+        } else if (isRadioButtonChecked === "interestOnly") {
+            // Convert annual interest rate to monthly interest
+            const monthlyInterest = monthlyInterest / 100 / 12;
+            // Calculate monthly interest payment
+            const monthlyInterestPayment = mortgageAmount * monthlyInterest;
+            // Total Interest Payment OverLoan Term
+            const totalInterest = monthlyInterestPayment * mortgageTerm * 12;
+            // Round it to two decimal and format into Currency
+            const interestPayment = formatNumber(monthlyInterestPayment);
+            const interestPaidOverTerm = formatNumber(totalInterest)l 
+        }
+    }
 }
 
